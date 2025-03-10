@@ -33,6 +33,8 @@
 #include "remollGenAl.hh"
 #include "remollGenLUND.hh"
 #include "remollGenHyperon.hh"
+#include "remollGenHypep.hh"
+
 
 #include <memory>
 
@@ -63,7 +65,8 @@ remollPrimaryGeneratorAction::remollPrimaryGeneratorAction()
     fEvGenMap["quasielasticC12"] = std::make_shared<remollGenC12>(1);
     fEvGenMap["inelasticC12"] = std::make_shared<remollGenC12>(2);
     fEvGenMap["hyperon"] = std::make_shared<remollGenHyperon>();
-
+    fEvGenMap["hypep"] = std::make_shared<remollGenHypep>();
+    
     // Populate map with all possible primary generators
     fPriGenMap["particlegun"] = std::make_shared<G4ParticleGun>();
     fPriGenMap["HEPEvt"] = std::make_shared<remollHEPEvtInterface>();
